@@ -6,7 +6,7 @@ const Home: NextPage = () => {
     <div className={styles.root}>
       <h1>Test</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
