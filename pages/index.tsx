@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import styles from './index.module.css';
-import { MetaMaskInpageProvider } from '@metamask/providers';
 import { useEthereum } from '../src/lib/hooks/provider';
+import { MmAccount } from '../src/components/account';
 
 const Home: NextPage = () => {
   const [account, setAccount] = useState('');
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.root}>
-      {account ? <div>{account}</div> : <button onClick={handleConnect}>Connect Metamask</button>}
+      {account ? <MmAccount account={account} /> : <button onClick={handleConnect}>Connect Metamask</button>}
     </div>
   );
 };
