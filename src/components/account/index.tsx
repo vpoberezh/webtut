@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import styles from './index.module.css';
+import s from './index.module.scss';
 import { MetaMaskInpageProvider } from '@metamask/providers';
 import { useEthereum } from '../../lib/hooks/provider';
 import { Maybe } from '@metamask/providers/dist/utils';
+import { CoinIconCodeList } from 'coin-icon';
+import { Coin } from '../coin';
 
 interface Props {
   account: string;
@@ -20,9 +22,18 @@ export const MmAccount: React.FC<Props> = ({ account }) => {
   }, [account, ethereum]);
 
   return (
-    <div className={styles.root}>
-      <div>{account}</div>
-      <div>{balance ? <span>{balance}</span> : <button onClick={handleConnect}>Get Eth balance</button>}</div>
+    <div className={s.root}>
+      <div className={s.meta}>{account}</div>
+      <div>
+        {CoinIconCodeList.map((code, i) => {
+          return (
+            <Coin key={i} code={code}>
+              {code}
+            </Coin>
+          );
+        })}
+      </div>
+      {/* <div>{balance ? <span>{balance}</span> : <button onClick={handleConnect}>Get Eth balance</button>}</div> */}
     </div>
   );
 };

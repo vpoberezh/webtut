@@ -5,7 +5,7 @@ import { CoinIconProvider } from 'coin-icon';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <CoinIconProvider folderPath="/coin">
+    <CoinIconProvider folderPath="/icon">
       <Component {...pageProps} />
     </CoinIconProvider>
   );

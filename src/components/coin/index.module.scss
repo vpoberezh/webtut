@@ -1,0 +1,35 @@
+@import "~estyle/index.scss";
+
+.root {
+  display: inline-block;
+  border: 1px solid #c1c1c1;
+  margin: 10px 0 0 10px;
+  cursor: pointer;
+  width: 80px;
+  height: 100px;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  padding: 5px;
+
+  @include col-space(3px);
+}
+
+.icon {
+  font-size: 16px;
+}
+
+.code {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.balance {
+  
+}

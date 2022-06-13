@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "stylelint \"**/*.scss\" && eslint .",
-    "lint:fix": "stylelint \"**/*.scss\" --fix && eslint . --fix",  
+    "lint:fix": "stylelint \"**/*.scss\" --fix && eslint . --fix",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint:fix": "stylelint \"**/*.scss\" --fix"
   },
@@ -15,6 +15,7 @@
     "@metamask/providers": "^9.0.0",
     "@types/react-window": "^1.8.5",
     "coin-icon": "^1.1.4",
+    "estyle": "^1.0.3",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
