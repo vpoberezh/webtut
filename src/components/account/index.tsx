@@ -13,18 +13,16 @@ export const MmAccount: React.FC<Props> = ({ account }) => {
   const ethereum = useEthereum();
 
   const handleConnect = useCallback(async () => {
-    console.log("get newBalance", account);
-    const newBalance: Maybe<string> = await ethereum.request({method: 'eth_getBalance', params: [account, 'latest']});
-    console.log("newBalance", newBalance);
+    console.log('get newBalance', account);
+    const newBalance: Maybe<string> = await ethereum.request({ method: 'eth_getBalance', params: [account, 'latest'] });
+    console.log('newBalance', newBalance);
     setBalance(newBalance);
   }, [account, ethereum]);
 
   return (
     <div className={styles.root}>
       <div>{account}</div>
-      <div>
-        {balance? <span>{balance}</span>: <button onClick={handleConnect}>Get Eth balance</button>}
-      </div>
+      <div>{balance ? <span>{balance}</span> : <button onClick={handleConnect}>Get Eth balance</button>}</div>
     </div>
   );
 };
